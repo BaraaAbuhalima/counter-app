@@ -47,14 +47,24 @@ export default function Home() {
       const data = await res.json();
       if (!res.ok) {
         console.error("Update failed", data);
+        alert(data?.error ?? "Update failed");
         return;
       }
+
+      // If the API indicates the update was not persisted to disk, warn the user
+      if (data?._persisted === false) {
+        alert(
+          "Updated in memory but failed to persist to disk in this environment."
+        );
+      }
+
       setCounters({
         video: Number(data.video ?? counters.video),
         photo: Number(data.photo ?? counters.photo),
       });
     } catch (err) {
       console.error("Update error", err);
+      alert("Update error. See console for details.");
     } finally {
       setLoading(false);
     }
