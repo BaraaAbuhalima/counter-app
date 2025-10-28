@@ -24,3 +24,88 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Counter app styles */
+.container {
+  max-width: 820px;
+  margin: 40px auto;
+  padding: 24px;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+}
+
+.counter-card {
+  background: rgba(0, 0, 0, 0.03);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+}
+
+.counter-title {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.counter-value {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.btn {
+  min-width: 64px;
+  height: 56px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: 600;
+  background: #16a34a; /* green-600 */
+  color: white;
+  transition: transform 80ms ease, box-shadow 80ms ease, background 120ms ease;
+  box-shadow: 0 4px 10px rgba(22,163,74,0.12);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn.secondary {
+  background: #ef4444; /* red-500 */
+  color: white;
+  box-shadow: 0 4px 10px rgba(239,68,68,0.12);
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.btn:focus {
+  outline: 3px solid rgba(59,130,246,0.18);
+  outline-offset: 2px;
+}
+
+@media (max-width: 720px) {
+  .container {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+  .btn {
+    min-width: 56px;
+    height: 48px;
+    font-size: 18px;
+  }
+}
