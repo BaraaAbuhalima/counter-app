@@ -69,10 +69,9 @@ body {
   cursor: pointer;
   font-size: 22px;
   font-weight: 600;
-  background: #16a34a; /* green-600 */
+  background: #111827;
   color: white;
-  transition: transform 80ms ease, box-shadow 80ms ease, background 120ms ease;
-  box-shadow: 0 4px 10px rgba(22,163,74,0.12);
+  transition: transform 80ms ease, box-shadow 80ms ease;
 }
 
 .btn:active {
@@ -84,18 +83,8 @@ body {
 }
 
 .btn.secondary {
-  background: #ef4444; /* red-500 */
-  color: white;
-  box-shadow: 0 4px 10px rgba(239,68,68,0.12);
-}
-
-.btn:hover:not(:disabled) {
-  transform: translateY(-1px);
-}
-
-.btn:focus {
-  outline: 3px solid rgba(59,130,246,0.18);
-  outline-offset: 2px;
+  background: #e5e7eb;
+  color: #111827;
 }
 
 @media (max-width: 720px) {
